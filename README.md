@@ -1,4 +1,4 @@
-# aws-sts-helper ![Build Status](https://travis-ci.org/LLK/scratch-asset-types.svg?branch=master)
+# aws-sts-helper
 
 A library for facilitating the acquisition of temporary security tokens through the AWS Security Token Service (STS)
 
