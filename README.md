@@ -22,9 +22,9 @@ Available variables and their usage:
 | AWS_STS_ACCESS_SECRET | | Equivalent to `AWS_SECRET_ACCESS_KEY`. Used to generate credentials suitable to assume a specific role and the policies associated with it. |
 | AWS_ROLE_ARN          | | The Role to assume in ARN format|
 | AWS_ROLE_SESSION_NAME | `temporary` |  A name that will be assigned to the temporary credentials |
-| AWS_STS_FILE_NAME | `./.aws-sts.json` | Used to store credentials in JSON format, fully qualified path to credential file, JSON |
-| AWS_ROLE_DURATION_SECONDS | 43200 | Number of seconds the temporary access key lasts|
-| AWS_STS_FILE_MODE | 0o600 | Permissions setting on JSON file that caches credentials, (600 is user read-write only) |
+| AWS_STS_FILE_NAME | `./.aws-sts.json` | Used to store credentials in JSON format, fully qualified path to credential file|
+| AWS_ROLE_DURATION_SECONDS | `43200` | Number of seconds the temporary access key lasts|
+| AWS_STS_FILE_MODE | `0o600` | Permissions setting on JSON file that caches credentials, (600 is user read-write only) |
 
 These values can be passed either in the environment or in a configuration object, with environment variables overriding any passed in configuration.
 
@@ -47,17 +47,17 @@ sts.getTemporaryCredentials({
             secret: 'secret key paired to access key'
         }
     }
-}, (err, awsRaw) => {
+}, (err, temp) => {
     if (err) {
         console.log('err:',err);
         process.exit(-1);
     }
-    var aws = JSON.parse(awsRaw);
 
-    console.log('aws:',aws);
-    var sh = `AWS_ACCESS_KEY_ID=${aws.Credentials.AccessKeyId}\n` +
-       `AWS_SECRET_ACCESS_KEY=${aws.Credentials.SecretAccessKey}\n` +
-       `AWS_SESSION_TOKEN=${aws.Credentials.SessionToken}\n`;
+    console.log('temp:',temp);
+    var sh = 
+       `export AWS_ACCESS_KEY_ID=${temp.Credentials.AccessKeyId}\n` +
+       `export AWS_SECRET_ACCESS_KEY=${temp.Credentials.SecretAccessKey}\n` +
+       `export AWS_SESSION_TOKEN=${temp.Credentials.SessionToken}\n`;
     fs.writeFileSync("aws-temp-credentials.sh", sh, {encoding:'utf-8'});
 });
 ```
