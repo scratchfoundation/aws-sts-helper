@@ -18,8 +18,8 @@ Available variables and their usage:
 
 | Env Variable    | Default     | Purpose/Default |
 |-----------------------|-------------------------------------|-----------------------------------------------------------------|
-| AWS_STS_ACCESS_KEY    | | Equivalent to `AWS_ACCESS_KEY_ID`. Used to assume a role and generate temporary credentials for it |
-| AWS_STS_ACCESS_SECRET | | Equivalent to `AWS_SECRET_ACCESS_KEY`. Used to assume a role and generate temporary credentials for it |
+| AWS_STS_ACCESS_KEY    | | Equivalent to `AWS_ACCESS_KEY_ID`. Used to generate credentials suitable to assume a specific role and the policies associated with it. |
+| AWS_STS_ACCESS_SECRET | | Equivalent to `AWS_SECRET_ACCESS_KEY`. Used to generate credentials suitable to assume a specific role and the policies associated with it. |
 | AWS_ROLE_ARN          | | The Role to assume in ARN format|
 | AWS_ROLE_SESSION_NAME | `temporary` |  A name that will be assigned to the temporary credentials |
 | AWS_STS_FILE_NAME | `./.aws-sts.json` | Used to store credentials in JSON format, fully qualified path to credential file, JSON |
