@@ -20,7 +20,7 @@ const getTemporaryCredentials = (config, callback) => {
         },
         role: {
             arn: process.env.AWS_ROLE_ARN || '',
-            sessionName: process.env.AWS_ROLE_SESSION_NAME || 'temporary'
+            sessionName: process.env.AWS_ROLE_SESSION_NAME || 'temporary',
             durationSeconds: process.env.AWS_ROLE_DURATION_SECONDS || 43200
         },
         key: {
