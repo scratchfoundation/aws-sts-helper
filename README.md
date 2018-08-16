@@ -23,8 +23,8 @@ Available variables and their usage:
 | AWS_ROLE_ARN          | | The Role to assume in ARN format|
 | AWS_ROLE_SESSION_NAME | `temporary` |  A name that will be assigned to the temporary credentials |
 | AWS_STS_FILE_NAME | `./.aws-sts.json` | Used to store credentials in JSON format, fully qualified path to credential file|
-| AWS_ROLE_DURATION_SECONDS | 43200 | Number of seconds the temporary access key lasts|
-| AWS_STS_FILE_MODE | 0o600 | Permissions setting on JSON file that caches credentials, (600 is user read-write only) |
+| AWS_ROLE_DURATION_SECONDS | `43200` | Number of seconds the temporary access key lasts|
+| AWS_STS_FILE_MODE | `0o600` | Permissions setting on JSON file that caches credentials, (600 is user read-write only) |
 
 These values can be passed either in the environment or in a configuration object, with environment variables overriding any passed in configuration.
 
