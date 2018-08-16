@@ -16,17 +16,17 @@ You can set environment variables and/or set values in the configuration map pas
 
 Available variables and their usage:
 
-| Env Variable    | Maps to     | Purpose/Default |
+| Env Variable    | Default     | Purpose/Default |
 |-----------------------|-------------------------------------|-----------------------------------------------------------------|
-| AWS_STS_ACCESS_KEY    | Equivalent to AWS_ACCESS_KEY_ID     | Used to assume a role and generate temporary credentials for it |
-| AWS_STS_ACCESS_SECRET | Equivalent to AWS_SECRET_ACCESS_KEY | Used to assume a role and generate temporary credentials for it |
-| AWS_ROLE_ARN          | The Role to assume in ARN format    |                                                                 |
-| AWS_ROLE_SESSION_NAME | A name that will be assigned to the temporary credentials | Defaults to `temporary` |
-| AWS_STS_FILE_NAME | Fully qualified path to credential file, JSON | Used to store credentials in JSON format, defaults to `./.aws-sts.json` |
-| AWS_ROLE_DURATION_SECONDS | Number of seconds the temporary access key lasts| defaults to 12 hours or 43200 seconds | |
-| AWS_STS_FILE_MODE | permissions setting on JSON file that caches credentials | Defaults to 0o600 or user read-write only |
+| AWS_STS_ACCESS_KEY    | | Equivalent to `AWS_ACCESS_KEY_ID`. Used to assume a role and generate temporary credentials for it |
+| AWS_STS_ACCESS_SECRET | | Equivalent to `AWS_SECRET_ACCESS_KEY`. Used to assume a role and generate temporary credentials for it |
+| AWS_ROLE_ARN          | | The Role to assume in ARN format|
+| AWS_ROLE_SESSION_NAME | `temporary` |  A name that will be assigned to the temporary credentials |
+| AWS_STS_FILE_NAME | `./.aws-sts.json` | Used to store credentials in JSON format, fully qualified path to credential file, JSON |
+| AWS_ROLE_DURATION_SECONDS | 43200 | Number of seconds the temporary access key lasts|
+| AWS_STS_FILE_MODE | 0o600 | Permissions setting on JSON file that caches credentials, (600 is user read-write only) |
 
-These values can be passed either in the environment or in a configuration object:
+These values can be passed either in the environment or in a configuration object, with environment variables overriding any passed in configuration.
 
 ```javascript
 const sts = require('aws-sts-helper');
