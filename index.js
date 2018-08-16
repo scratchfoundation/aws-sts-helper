@@ -51,12 +51,12 @@ const getTemporaryCredentials = (config, callback) => {
                     },
                     err => {
                         if (err) return callback(err, null);
-                        return callback(null, newCredentials);
+                        return callback(null, JSON.parse(newCredentials));
                     }
                 );
             });
         } else {
-            return callback(null, old);
+            return callback(null, JSON.parse(old));
         }
     });
 };
