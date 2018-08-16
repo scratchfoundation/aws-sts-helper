@@ -19,5 +19,15 @@
   },
   "dependencies": {
     "aws-sdk": "~2.166.0"
-  }
+  },
+  "keywords": [
+    "aws",
+    "sts",
+    "aws-sdk",
+    "aws-sts",
+    "roles",
+    "policy",
+    "token",
+    "security"
+  ]
 }
