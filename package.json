@@ -1,6 +1,6 @@
 {
   "name": "aws-sts-helper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Facilitates gathering temporary security tokens from the AWS STS (Security Token Service) and then using that token information for interacting with AWS APIs",
   "repository": {
     "type": "git",
@@ -19,5 +19,15 @@
   },
   "dependencies": {
     "aws-sdk": "~2.166.0"
-  }
+  },
+  "keywords": [
+    "aws",
+    "sts",
+    "aws-sdk",
+    "aws-sts",
+    "roles",
+    "policy",
+    "token",
+    "security"
+  ]
 }
